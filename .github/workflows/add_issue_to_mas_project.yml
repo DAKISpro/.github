@@ -1,4 +1,4 @@
-name: Add issue to Team DIS project
+name: Add issue to Team MAS project
 on:
   issues:
     types:
@@ -11,6 +11,6 @@ jobs:
       - name: Add To GitHub projects
         uses: actions/add-to-project@v0.3.0
         with:
-          project-url: https://github.com/orgs/zalf-rdm/projects/2
+          project-url: https://github.com/orgs/DAKISpro/projects/2
           github-token: ${{ secrets.ACTION_TOKEN }}
  
