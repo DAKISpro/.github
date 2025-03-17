@@ -4,7 +4,7 @@ about: Create an issue of a bug report. Anlegen eines Issues für einen neuen Fe
 title: 'bug name/designation | Kurzbeschreibung/Benennung des Fehler'
 labels: 'bug'
 assignees: ''
-projects: ["DAKISpro/1"]
+projects: ["DAKISpro/DAKIS"]
 ---
 
 ## Expected Behavior | erwartes Verhalten
