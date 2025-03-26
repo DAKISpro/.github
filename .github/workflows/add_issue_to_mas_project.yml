@@ -1,4 +1,5 @@
-name: Add issue to Team MAS project
+name: Add Issue to GitHub Project
+
 on:
   issues:
     types: [opened]
@@ -10,5 +11,6 @@ jobs:
       - name: Add issue to GitHub Project
         uses: actions/add-to-project@v0.4.0
         with:
-          project-url: "https://github.com/orgs/DAKISpro/projects/1"
-          github-token: ${{ secrets.GITHUB_TOKEN}}
+          project-url: "https://github.com/orgs/DAKISpro/projects/1" 
+          github-token: ${{ secrets.GH_PROJECT_TOKEN }}
+
