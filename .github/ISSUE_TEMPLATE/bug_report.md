@@ -1,19 +1,19 @@
 ---
-name: bug report | Fehler melden
-about: Create an issue of a bug report. Anlegen eines Issues für einen neuen Fehler(bug).
-title: 'bug name/designation | Kurzbeschreibung/Benennung des Fehler'
+name: bug report 
+about: Create an issue of a bug report. 
+title: 'bug name/designation 
 labels: 'bug'
 assignees: ''
 projects: ["DAKISpro/DAKIS"]
 ---
 
-## Expected Behavior | erwartes Verhalten
+## Expected Behavior
 
 
-## Actual Behavior | aktuelles Verhalten
+## Actual Behavior 
 
 
-## Steps to Reproduce the Problem | Schritte zum reproduzieren
+## Steps to Reproduce the Problem
 
   1.
   2.
