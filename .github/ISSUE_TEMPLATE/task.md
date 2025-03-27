@@ -1,15 +1,15 @@
 ---
-name: new task | neue Aufgabe
-about: Create an issue of a todo task, e.g. migrate Database. | Anlegen eines Todos z.B. Migration der Datenbank.
-title: 'new task name | Name der neuen Aufgabe'
+name: new task 
+about: Create an issue of a todo task, e.g. migrate Database. 
+title: 'new task name'
 labels: 'task'
 assignees: ''
 ---
 
-**What is the task about | Worum geht es bei dieser Aufgabe**
-<!-- Short description of the task content. | Kurze beschreibung des inhaltes -->
+**What is the task about**
+<!-- Short description of the task content. -->
 
-**Which steps are on the way to solve this task | Welche Schritte müssen für diese Aufgabe erledigt werden**
+**Which steps are on the way to solve this task**
   1.
   2.
   3.
