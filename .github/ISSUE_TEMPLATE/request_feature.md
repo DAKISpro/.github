@@ -1,15 +1,15 @@
 ---
-name: new feature | neue Funktionalität
-about: Create an issue of a feature request. | Anlegen eines Issues für eine neue Funktionalität.
-title: 'new feature name | Name der neuen Funktionalität'
+name: new feature
+about: Create an issue of a feature request. 
+title: 'new feature name'
 labels: 'feature'
 assignees: ''
 ---
 
-**Is your feature request related to a problem? Please describe. | Gehört diese neue Funktion zu einem bestehenden Problem? Welches?**
-<!-- A clear and concise description of what the problem is. Ex. I'm always frustrated when [...] | Eine Beschreibung des Problems. Z.B. ich bin immer genervt davon wenn []...] -->
-**Describe the solution you'd like | Beschreibe deinen Lösungsansatz**
-<!-- A clear and concise description of what you want to happen. Beschreibung der Erwartung wie es zu funktionieren hat. -->
+**Is your feature request related to a problem? Please describe.**
+<!-- A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]  -->
+**Describe the solution you'd like**
+<!-- A clear and concise description of what you want to happen.  -->
 
-**Additional context | zusätzliche Informationen**
+**Additional context**
 <!-- Add any other context or screenshots about the feature request here. --> 
