@@ -26,5 +26,5 @@ jobs:
         with:
           push: true
         env:
-          TAG: ${{ github.ref_name }}
+          TAG: ${{ steps.release.outputs.tag_name }}
         if: ${{ steps.release.outputs.release_created }}
