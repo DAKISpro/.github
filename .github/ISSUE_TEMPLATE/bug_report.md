@@ -1,4 +1,3 @@
----
 name: bug report 
 about: Create an issue of a bug report. 
 title: 'bug name/designation 
