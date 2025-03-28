@@ -26,5 +26,5 @@ jobs:
         with:
           push: true
         env:
-          TAG: ${{ steps.release.outputs.tag_name }}
+          TAG: ${{ steps.release.outputs.version }}
         if: ${{ steps.release.outputs.release_created }}
