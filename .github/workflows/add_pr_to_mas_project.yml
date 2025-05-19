@@ -1,11 +1,11 @@
-name: Add issue to Team Dakis project
+name: Add pr to the Dakis project
 on:
   pull_request:
     types:
       - opened
 jobs:
   add-to-project:
-    name: Add issue to project
+    name: Add pr to project
     runs-on: ubuntu-latest
     steps:
       - name: Add To GitHub projects
