@@ -1,4 +1,4 @@
-name: Add issue to Team MAS project
+name: Add issue to Team Dakis project
 on:
   pull_request:
     types:
@@ -12,5 +12,5 @@ jobs:
         uses: actions/add-to-project@v0.3.0
         with:
           project-url: https://github.com/orgs/DAKISpro/projects/1
-          github-token: ${{ secrets.ACTION_TOKEN }}
+          github-token: ${{ secrets.GH_PROJECT_TOKEN }}
  
