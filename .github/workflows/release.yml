@@ -1,17 +1,28 @@
-name: Release and build and push to registry optionally publish to pypi
+name: Release and build and push to registry
 on:
   workflow_call:
     inputs:
       push_docker:
-        description: "Whether to build and push Docker images"
+        description: Build and push Docker images
         required: false
         type: boolean
         default: true
+      dockerhub_username:
+        description: Docker Hub username
+        required: false
+        type: string
+        default: zalfrpm
+    secrets:
+      DOCKERHUB_TOKEN:
+        description: Docker Hub token or password
+        required: true
     outputs:
       release_created:
         description: Whether a release was created
         value: ${{ jobs.release-please.outputs.release_created }}
-      
+      version:
+        description: Created release version
+        value: ${{ jobs.release-please.outputs.version }}
 permissions:
   contents: write
   pull-requests: write
@@ -26,22 +37,27 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
-      # Docker steps (optional)
-      - name: Login to DockerHub
-        uses: docker/login-action@v3
-        with:
-          username: zalfrpm
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-        if: ${{ steps.release.outputs.release_created && inputs.push_docker }}
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      version: ${{ steps.release.outputs.version }}
+  docker-release:
+    name: Build and push Docker image
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created == 'true' && inputs.push_docker }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-        if: ${{ steps.release.outputs.release_created && inputs.push_docker }}
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ inputs.dockerhub_username }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push
         uses: docker/bake-action@v6
         with:
           push: true
         env:
-          TAG: ${{ steps.release.outputs.version }}
-        if: ${{ steps.release.outputs.release_created && inputs.push_docker }}
-    outputs:
-      release_created: ${{ steps.release.outputs.release_created }}
+          TAG: ${{ needs.release-please.outputs.version }}
