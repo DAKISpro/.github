@@ -7,11 +7,11 @@ on:
         required: false
         type: boolean
         default: true
-      publish_pypi:
-        description: "Whether to build and publish the Python package"
-        required: false
-        type: boolean
-        default: false
+    outputs:
+      release_created:
+        description: Whether a release was created
+        value: ${{ jobs.release.outputs.release_created }}
+      
 permissions:
   contents: write
   pull-requests: write
@@ -26,26 +26,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
-      # Build + publish Python package to TestPyPI on release
-      - name: Checkout
-        uses: actions/checkout@v4
-        if: ${{ steps.release.outputs.release_created }}
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-        if: ${{ steps.release.outputs.release_created && inputs.publish_pypi }}
-      - name: Build Python distribution
-        run: |
-          python -m pip install --upgrade pip build
-          python -m build
-        if: ${{ steps.release.outputs.release_created && inputs.publish_pypi }}
-      - name: Publish to TestPyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          repository-url: https://test.pypi.org/legacy/
-          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-        if: ${{ steps.release.outputs.release_created && inputs.publish_pypi }}
       # Docker steps (optional)
       - name: Login to DockerHub
         uses: docker/login-action@v3
