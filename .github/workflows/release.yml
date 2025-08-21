@@ -10,7 +10,7 @@ on:
     outputs:
       release_created:
         description: Whether a release was created
-        value: ${{ jobs.release.outputs.release_created }}
+        value: ${{ jobs.release-please.outputs.release_created }}
       
 permissions:
   contents: write
@@ -43,3 +43,5 @@ jobs:
         env:
           TAG: ${{ steps.release.outputs.version }}
         if: ${{ steps.release.outputs.release_created && inputs.push_docker }}
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
