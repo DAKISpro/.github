@@ -15,7 +15,7 @@ on:
     secrets:
       DOCKERHUB_TOKEN:
         description: Docker Hub token or password
-        required: true
+        required: false
     outputs:
       release_created:
         description: Whether a release was created
