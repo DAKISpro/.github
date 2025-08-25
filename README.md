@@ -15,7 +15,7 @@ The DAKISpro/deploy repository is designed to manage automation, deployment scri
 
 ## ⚙️ Org-wide GitHub Settings
 
-If you have a general issue to report and do not know which repository it belongs to, please create a ticket here: [DAKISpro/.github]([https://github.com/DAKISpro/organization-wiki/wiki](https://github.com/DAKISpro/.github/issues)) 
+If you have a general issue to report and do not know which repository it belongs to, please create a ticket here: [DAKISpro/.github]([https://github.com/DAKISpro/organization-wiki/wiki](https://github.com/DAKISpro/.github/issues) 
 
 This repository manages organization-wide GitHub settings, issue templates, and workflows for consistency across projects.
 
