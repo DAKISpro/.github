@@ -7,6 +7,12 @@ DAKISpro advances sustainable agriculture by harmonizing ecosystem services, bio
 ## 📚 Organization Wiki
 [DAKISpro/organization-wiki](https://github.com/DAKISpro/organization-wiki/wiki) – Centralized documentation for the organization.
 
+## 📂Important Repositories
+
+### DAKISpro/deploy
+
+The DAKISpro/deploy repository is designed to manage automation, deployment scripts, and infrastructure configuration for the organization’s applications. Its central role is to streamline setting up local development environments and deploying applications efficiently on servers running Docker, ensuring consistency across development and production setups.
+
 ## ⚙️ Org-wide GitHub Settings
 This repository manages organization-wide GitHub settings, issue templates, and workflows for consistency across projects.
 
