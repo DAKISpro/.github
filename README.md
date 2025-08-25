@@ -13,7 +13,7 @@ DAKISpro advances sustainable agriculture by harmonizing ecosystem services, bio
 
 The DAKISpro/deploy repository is designed to manage automation, deployment scripts, and infrastructure configuration for the organization’s applications. Its central role is to streamline setting up local development environments and deploying applications efficiently on servers running Docker, ensuring consistency across development and production setups.
 
-If you want to find the complete list of repositories, here is the list: [DAKISpro/all-repos](https://github.com/DAKISpro/organization-wiki/wiki/Project-Index:-Links-to-all-repositories-in-the-organization).
+If you want to find the complete list of repositories, here is the list: [DAKISpro/all-repos](https://github.com/DAKISpro/organization-wiki/wiki/Project-Index:-Links-to-all-repositories-in-the-organization.).
 
 ## ⚙️ Org-wide GitHub Settings
 
