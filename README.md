@@ -19,6 +19,8 @@ If you want to find the complete list of repositories, here is the list: [DAKISp
 
 If you have a general issue to report and do not know which repository it belongs to, please create a ticket here: [DAKISpro/.github](https://github.com/DAKISpro/.github/issues) 
 
+or https://github.com/DAKISpro/general-questions/issues
+
 This repository manages organization-wide GitHub settings, issue templates, and workflows for consistency across projects.
 
 ---
