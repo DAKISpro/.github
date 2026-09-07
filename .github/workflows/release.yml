@@ -69,6 +69,11 @@ jobs:
       - name: Build and push
         uses: docker/bake-action@v7
         with:
+          # Build from the checked out workspace instead of letting BuildKit
+          # clone the git ref itself. BuildKit cannot authenticate to private
+          # submodules (SSH url in .gitmodules), the checkout step already did
+          # that with the read token.
+          source: .
           push: true
         env:
           TAG: ${{ needs.release-please.outputs.version }}
