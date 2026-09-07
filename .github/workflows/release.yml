@@ -12,9 +12,17 @@ on:
         required: false
         type: string
         default: zalfrpm
+      submodules:
+        description: Submodules to check out (false, true, or recursive)
+        required: false
+        type: string
+        default: "false"
     secrets:
       DOCKERHUB_TOKEN:
         description: Docker Hub token or password
+        required: false
+      DAKISPRO_READ_TOKEN:
+        description: Token used to check out private submodules
         required: false
     outputs:
       release_created:
@@ -48,6 +56,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          submodules: ${{ inputs.submodules }}
+          token: ${{ secrets.DAKISPRO_READ_TOKEN || github.token }}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
       - name: Login to Docker Hub
